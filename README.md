@@ -1,6 +1,6 @@
 # Help Center QA
 
-This Flask app for [Help Center QA](https://github.com/mmmaia/helpcenter-qa).
+This is a Flask app for [Help Center QA](https://github.com/mmmaia/helpcenter-qa).
 
 ## Running Locally
 
