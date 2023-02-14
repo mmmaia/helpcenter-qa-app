@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinitePay QA</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+
+<body class="h-full font-sans antialiased font-normal leading-normal bg-white leading-relaxed">
+    <div class="main flex flex-col">
+        <div class="px-3 lg:px-0 h-full">
+            <div class="container grid mx-auto my-8 text-center">
+                <h1 class="text-3xl font-bold my-12">
+                    InfinitePay QA
+                </h1>
+
+                <div class="mx-auto w-1/2 p-8">
+                    <form action="/qa" method="post">
+                        <div class="col-span-3 sm:col-span-2">
+                            <label for="question" class="block text-sm font-bold text-gray-700">Question</label>
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <input type="text" name="question" id="company-website" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-base" placeholder="Your question...">
+
+                            </div>
+                        </div>
+
+                        <div class="px-4 py-3 text-center sm:px-6">
+                            <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-12 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="mx-auto w-1/2 p-8 mt-32">
+                    <h2 class="text-xl font-bold py-6">About</h2>
+                    <p>This a proof of concept QA tool for InfinitePay.</p>
+                    <p>It's powered by <a href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings" class="text-blue-500 hover:text-blue-700">OpenAI's Embeddings API</a><wbr>
+                        and built in Python with <a href="https://github.com/hwchase17/langchain" class="text-blue-500 hover:text-blue-700">LangChain</a>
+                        and <a href="https://faiss.ai/" class="text-blue-500 hover:text-blue-700">Faiss</a>.</p>
+
+                    <h2 class="text-xl font-bold py-6 mt-12">How it works</h2>
+                    <div class="text-left">
+                        <ul class="list-decimal">
+                        <li>All articles from <a href="https://ajuda.infinitepay.io/pt-BR/" class="text-blue-500 hover:text-blue-700">InfinitePay's Help Center</a> are scraped.</li>
+                        <li>Embeddings are generated with OpenAI's API and passed to Faiss.</li>
+                        <li>The embedding vector and Faiss index are store in local files.</li>
+                        <li>When a user asks a question, the most similar documents to the question are found and used as context for OpenAI's prompt.</li>
+                        </ul>
+                        <p class="text-center py-6">Source code: <a href="https://github.com/mmmaia/helpcenter-qa-app" class="text-blue-500 hover:text-blue-700">https://github.com/mmmaia/helpcenter-qa-app</a></p>
+                    </div>
+
+                    <p class="text-gray-500 text-sm mt-32">Built by Maurício Maia<br/>
+                        <a href="https://www.linkedin.com/in/mauriciommaia/"><img src="https://simpleicons.now.sh/linkedin/6B7280" class="my-4 w-[16px] h-[16px] inline-block"/></a>
+                        <a href="https://github.com/mmmaia"><img src="https://simpleicons.now.sh/github/6B7280" class="my-4 w-[16px] h-[16px] inline-block"/></a>
+                        <a href="https://twitter.com/mmaia"><img src="https://simpleicons.now.sh/twitter/6B7280" class="my-4 w-[16px] h-[16px] inline-block"/></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

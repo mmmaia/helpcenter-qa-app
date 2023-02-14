@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinitePay QA</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+
+<body class="h-full font-sans antialiased font-normal leading-normal bg-white">
+    <div class="main flex flex-col">
+        <div class="px-3 lg:px-0 h-full">
+            <div class="container grid mx-auto my-8 text-center">
+                <h1 class="text-3xl font-bold my-12">
+                    InfinitePay QA
+                </h1>
+
+                <div class="mx-auto w-1/2 p-8">
+                    <h2 class="text-xl font-bold my-6">{{ result.question }}</h2>
+                    <p>🤖 {{ result.answer }}</p>
+
+                    {% set sources = result.sources.strip().replace(",", "\n").split("\n") %}
+
+                    <h2 class="text-xl font-bold my-6">Sources</h2>
+                    {% for source in sources %}
+                    <ul class="list-none">
+                        <li><a href="{{ source }}">{{ source }}</a></li>
+                    </ul>
+                    {% endfor %}
+                </div>
+
+                <p class="text-gray-500 text-sm mt-32">Built by Maurício Maia<br/>
+                    <a href="https://www.linkedin.com/in/mauriciommaia/"><img src="https://simpleicons.now.sh/linkedin/6B7280" class="my-4 w-[16px] h-[16px] inline-block"/></a>
+                    <a href="https://github.com/mmmaia"><img src="https://simpleicons.now.sh/github/6B7280" class="my-4 w-[16px] h-[16px] inline-block"/></a>
+                    <a href="https://twitter.com/mmaia"><img src="https://simpleicons.now.sh/twitter/6B7280" class="my-4 w-[16px] h-[16px] inline-block"/></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
